@@ -1,0 +1,12 @@
+---
+# tasks file for EC2_instance
+- ec2:
+   key_name: '{{ key_name }}'
+   instance_type: '{{ instance_type }}'
+   image: '{{ ami_id }}'
+   region: '{{ instance_region }}'
+   wait: '{{ wait_condition }}'
+   group: '{{ instance_group }}'
+   count: '{{ instance_count }}'
+   vpc_subnet_id: '{{ subnet_id }}'
+   assign_public_ip: '{{ public_ip_condition }}'

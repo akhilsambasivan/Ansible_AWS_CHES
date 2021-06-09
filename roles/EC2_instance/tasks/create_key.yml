@@ -1,0 +1,14 @@
+---
+#tasks file for key creation
+- name: Create an EC2 key for instances
+  ec2_key:
+    name: '{{ key_name }}'
+    region: '{{ key_region }}'
+  register: occurance
+
+- name: Save the created EC2 key
+  copy:
+    content: '{{ occurance.key.private_key }}'
+    dest: './{{ key_name }}.pem'
+    mode: 0600
+  when: occurance.changed

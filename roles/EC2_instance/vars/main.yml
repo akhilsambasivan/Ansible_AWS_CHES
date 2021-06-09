@@ -1,2 +1,14 @@
 ---
-# vars file for EC2_instance
+#Varibale declaration for instance creation
+key_name: mykey
+instance_type: t2.micro
+ami_id: ami-0cf6f5c8a62fa5da6
+instance_region: us-west-2
+wait_condition: yes
+instance_group: Ansible-node #SecurityGroup name
+instance_count: 1
+subnet_id: subnet-ebd2728e
+public_ip_condition: yes
+
+#Variable declaration for key creation
+key_region: us-west-2
