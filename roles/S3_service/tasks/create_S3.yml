@@ -1,0 +1,5 @@
+---
+#Create s3 buckets for CHES
+- s3_bucket:
+    name: '{{ CHES_s3_bucket_name }}'
+    state: '{{ s3_state }}'

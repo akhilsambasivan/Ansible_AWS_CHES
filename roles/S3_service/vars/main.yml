@@ -1,2 +1,4 @@
 ---
 # vars file for S3_service
+CHES_s3_bucket_name: ches-s3
+s3_state: present
