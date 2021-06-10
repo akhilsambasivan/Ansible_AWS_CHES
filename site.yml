@@ -3,5 +3,5 @@
    hosts: localhost
    gather_facts: true
    roles:
-   - EC2_instance
+   #- EC2_instance
    - S3_service
