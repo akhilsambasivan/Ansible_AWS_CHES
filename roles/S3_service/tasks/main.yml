@@ -1,3 +1,4 @@
 ---
 # tasks file for S3_service
-- include: create_S3.yml
+- include: create_S3_bucket.yml
+- include: create_S3_folders.yml

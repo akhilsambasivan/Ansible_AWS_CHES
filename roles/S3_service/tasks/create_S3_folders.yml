@@ -1,0 +1,7 @@
+---
+- name: Create folder for s3 bucket
+  aws_s3:
+    bucket: '{{ CHES_s3_bucket_name }}'
+    object: "/my/directory/{{ s3_folder }}"
+    mode: '{{ s3_mode }}'
+    region: '{{ s3_region }}'
