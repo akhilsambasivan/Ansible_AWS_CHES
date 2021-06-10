@@ -1,2 +1,7 @@
 ---
 # vars file for CloudFront_service
+cf_state: present
+cf_domain: www.ches-test.com
+cf_tag_name: CHES CF distribution
+cf_tag_project: CHES CF test
+cf_priority: 1

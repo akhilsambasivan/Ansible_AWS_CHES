@@ -1,9 +1,9 @@
 ---
 - name: Create CloudFront Distribution for CHES
   cloudfront_distribution:
-    state: present
-    default_origin_domain_name: www.ches-test.com
+    state: '{{ cf_state }}'
+    default_origin_domain_name: '{{ cf_domain }}'
     tags:
-      Name: CHES CF distribution
-      Project: CHES CF test
-      Priority: '1'
+      Name: '{{ cf_tag_name }}'
+      Project: '{{ cf_tag_project }}'
+      Priority: '{{ cf_priority }}'
