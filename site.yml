@@ -4,4 +4,5 @@
    gather_facts: true
    roles:
    #- EC2_instance
-   - S3_service
+   #- S3_service
+   - CloudFront_service
