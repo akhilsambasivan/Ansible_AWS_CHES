@@ -1,2 +1,2 @@
 ---
-# vars file for SQS_service
+# vars file for SQS_servic defined in group_vars global variable

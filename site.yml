@@ -1,8 +1,9 @@
 ---
  - name: Create CHES Environment
-   hosts: localhost
+   hosts: local
    gather_facts: true
    roles:
+   #- VPC_service        
    #- EC2_instance
    #- S3_service
    - CloudFront_service

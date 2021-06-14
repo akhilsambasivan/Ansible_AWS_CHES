@@ -1,7 +1,2 @@
 ---
-# vars file for S3_service
-CHES_s3_bucket_name: ches-s3
-s3_state: present
-s3_region: us-west-2
-s3_folder: test
-s3_mode: create
+# vars file for S3_service defined in group_vars global variable

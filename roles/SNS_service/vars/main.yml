@@ -1,2 +1,2 @@
 ---
-# vars file for SNS_service
+# vars file for SNS_service defined in group_vars global variable
