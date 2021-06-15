@@ -1,0 +1,9 @@
+---
+# tasks file for VPC_service
+- name: Create VPC service for CHES
+  ec2_vpc_net:
+    name: '{{ vpc_name }}'
+    cidr_block: '{{ vpc_cidr }}'
+    region: '{{ vpc_region }}'
+    state: '{{ vpc_state }}'
+  register: CHES_VPC

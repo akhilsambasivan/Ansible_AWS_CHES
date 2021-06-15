@@ -11,24 +11,24 @@
       - proto: '{{ sg_proto_t }}'
         ports:
         - '{{ SSH_port }}'
-        cidr_ip: 0.0.0.0/0
+        cidr_ip: '{{ public_cidr }}'
         rule_desc: "allow all on port {{ SSH_port }}"
 
       - proto: '{{ sg_proto_t }}'
         ports:
         - '{{ Http_port }}'
-        cidr_ip: 0.0.0.0/0
+        cidr_ip: '{{ public_cidr }}'
         rule_desc: "allow all on port {{ Http_port }}"
 
       - proto: '{{ sg_proto_t }}'
         ports:
         - '{{ Https_port }}'
-        cidr_ip: 0.0.0.0/0
+        cidr_ip: '{{ public_cidr }}'
         rule_desc: "allow all on port {{ Https_port }}"
 
     rules_egress:
       - proto: '{{ sg_proto_a }}'
-        cidr_ip: 0.0.0.0/0
+        cidr_ip: '{{ public_cidr }}'
         rule_desc: "allow all"
 
-  register: CHES_instance_SG
+  register: CHES_SG 

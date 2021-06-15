@@ -2,7 +2,10 @@
 #----------------------------------------#
 #Varibale declaration for VPC_service role
 #----------------------------------------#
-
+vpc_name: CHES_VPC
+vpc_cidr: 10.10.0.0/24
+vpc_region: us-west-2 #>> VPC region
+vpc_state: present
 
 #--------------------------------------------------#
 #Varibale declaration for EC2 instance creation role
@@ -10,16 +13,17 @@
 key_name: CHES_key
 instance_type: t2.micro
 ami_id: ami-0cf6f5c8a62fa5da6
-instance_region: us-west-2
+instance_region: us-west-2 #>> EC2 instance region
 wait_condition: yes
 instance_count: 1
 subnet_id: subnet-ebd2728e
 public_ip_condition: yes
 
 #SecurityGroup vars
-instance_security_group: CHES_SG #SecurityGroup name
+instance_security_group: CHES_SG #>> EC2 instance SecurityGroup name
 vpc_id: vpc-f39b4f96
 aws_profile: default
+public_cidr: 0.0.0.0/0
 
 #SecurityGroup protocol vars
 sg_proto_t: tcp
@@ -36,7 +40,7 @@ Https_port: 443
 #----------------------------------------#
 CHES_s3_bucket_name: ches-s3
 s3_state: present
-s3_region: us-west-2
+s3_region: us-west-2 #>> S3 bucket region
 s3_folder: test
 s3_mode: create
 
@@ -48,5 +52,3 @@ cf_domain: www.ches-test.com
 cf_tag_name: CHES CF distribution
 cf_tag_project: CHES CF test
 cf_priority: 1
-
-
