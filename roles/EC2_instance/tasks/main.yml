@@ -1,6 +1,5 @@
 ---
 # tasks file for EC2_instance
 - include: create_key.yml
-- include: create_security_group.yml
 - include: create_ec2_instance.yml
 

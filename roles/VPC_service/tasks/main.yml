@@ -1,3 +1,7 @@
 ---
-# tasks file for VPC_service
+# tasks file for VPC_service role
 - include: create_VPC.yml
+- include: create_subnet.yml
+- include: create_IGW.yml
+- include: create_route.yml
+- include: create_security_group.yml

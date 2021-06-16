@@ -4,6 +4,6 @@
    gather_facts: true
    roles:
    - VPC_service        
-   #- EC2_instance
+   - EC2_instance
    #- S3_service
    #- CloudFront_service

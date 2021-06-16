@@ -1,0 +1,12 @@
+---
+# tasks file to create CHES_vpc subnet
+- name: Create Subnet for the CHES_vpc
+  ec2_vpc_subnet:
+   state: '{{ subnet_state }}'
+   vpc_id: '{{ vpc_id }}'
+   region: '{{ vpc_region }}'
+   cidr: '{{ subnet_cidr }}'
+   map_public: '{{ subnet_map_public }}'
+   resource_tags:
+     Name: '{{ subnet_name }}'
+  register: CHES_subnet

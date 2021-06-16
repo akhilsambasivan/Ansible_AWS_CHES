@@ -6,24 +6,27 @@ vpc_name: CHES_VPC
 vpc_cidr: 10.10.0.0/24
 vpc_region: us-west-2 #>> VPC region
 vpc_state: present
+vpc_tenancy: default
+vpc_dns_support: yes
 
-#--------------------------------------------------#
-#Varibale declaration for EC2 instance creation role
-#--------------------------------------------------#
-key_name: CHES_key
-instance_type: t2.micro
-ami_id: ami-0cf6f5c8a62fa5da6
-instance_region: us-west-2 #>> EC2 instance region
-wait_condition: yes
-instance_count: 1
-subnet_id: subnet-ebd2728e
-public_ip_condition: yes
+#VPC Subnet vars
+subnet_name: CHES_subnet
+subnet_state: present
+subnet_cidr: 10.10.0.0/26
+subnet_map_public: yes
+
+#VPC IGW vars
+igw_name: CHES_igw
+igw_state: present
+
+#VPC Route vars
+route_name: CHES_route
+public_cidr: 0.0.0.0/0
 
 #SecurityGroup vars
-instance_security_group: CHES_SG #>> EC2 instance SecurityGroup name
+instance_security_group: CHES_sg #>> EC2 instance SecurityGroup name
 vpc_id: vpc-f39b4f96
 aws_profile: default
-public_cidr: 0.0.0.0/0
 
 #SecurityGroup protocol vars
 sg_proto_t: tcp
@@ -34,6 +37,18 @@ sg_proto_a: all
 SSH_port: 22
 Http_port: 80
 Https_port: 443
+
+#--------------------------------------------------#
+#Varibale declaration for EC2 instance creation role
+#--------------------------------------------------#
+CHES_ec2_name: CHES_EC2
+key_name: CHES_key
+instance_type: t2.micro
+ami_id: ami-0cf6f5c8a62fa5da6
+instance_region: us-west-2 #>> EC2 instance region
+wait_condition: yes
+instance_count: 1
+public_ip_condition: yes
 
 #----------------------------------------#
 # Variable declaration for S3_service role

@@ -8,5 +8,7 @@
    wait: '{{ wait_condition }}'
    group: '{{ instance_security_group }}'
    count: '{{ instance_count }}'
-   vpc_subnet_id: '{{ subnet_id }}'
+   vpc_subnet_id: '{{ CHES_subnet.subnet.id }}'
    assign_public_ip: '{{ public_ip_condition }}'
+   instance_tags:
+     Name: '{{ CHES_ec2_name }}'

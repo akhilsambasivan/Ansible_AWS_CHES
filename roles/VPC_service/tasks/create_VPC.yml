@@ -6,4 +6,11 @@
     cidr_block: '{{ vpc_cidr }}'
     region: '{{ vpc_region }}'
     state: '{{ vpc_state }}'
-  register: CHES_VPC
+    dns_support: '{{ vpc_dns_support }}'
+    tenancy: '{{ vpc_tenancy }}'
+  register: CHES_vpc
+
+- name: Set VPC ID in variable
+  set_fact:
+    vpc_id: '{{ CHES_vpc.vpc.id }}'
+

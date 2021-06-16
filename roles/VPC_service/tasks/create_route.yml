@@ -1,0 +1,13 @@
+---
+# tasks file for creating route for CHES_vpc
+- name: Create route for CHES_vpc
+  ec2_vpc_route_table:
+    vpc_id: '{{ vpc_id }}'
+    region: '{{ vpc_region }}'
+    subnets:
+      - '{{ CHES_subnet.subnet.id }}'
+    routes:
+      - dest: '{{ public_cidr }}'
+        gateway_id: '{{ CHES_igw.gateway_id  }}'
+    tags:
+      Name: '{{ route_name }}'

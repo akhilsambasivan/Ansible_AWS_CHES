@@ -1,0 +1,10 @@
+---
+# tasks file to create CHES_vpc IGW 
+- name: Create IGW for CHES_vpc
+  ec2_vpc_igw:
+    vpc_id: '{{ vpc_id }}'
+    region: '{{ vpc_region }}'
+    state: '{{ igw_state }}'
+    tags:
+      Name: '{{ igw_name }}'
+  register: CHES_igw

@@ -1,11 +1,11 @@
 ---
 #task to create security group
-- name: Create security group - CHES_SG
+- name: Create security group - CHES_sg
   ec2_group:
     name: '{{ instance_security_group }}'
     description: SG with rule descriptions
     vpc_id: '{{ vpc_id }}'
-    profile: "{{ aws_profile }}"
+    profile: '{{ aws_profile }}'
     region: '{{ instance_region }}'
     rules:
       - proto: '{{ sg_proto_t }}'
@@ -31,4 +31,5 @@
         cidr_ip: '{{ public_cidr }}'
         rule_desc: "allow all"
 
-  register: CHES_SG 
+  register: CHES_sg
+
