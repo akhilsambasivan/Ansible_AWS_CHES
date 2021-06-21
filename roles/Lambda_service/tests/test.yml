@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - Lamda_service
+    - Lambda_service

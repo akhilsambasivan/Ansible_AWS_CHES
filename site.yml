@@ -3,7 +3,8 @@
    hosts: local
    gather_facts: true
    roles:
-   - VPC_service        
-   - EC2_instance
+   #- VPC_service        
+   #- EC2_instance
    #- S3_service
    #- CloudFront_service
+   - Lambda_service 
