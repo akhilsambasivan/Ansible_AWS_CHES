@@ -68,14 +68,12 @@ cf_tag_name: CHES CF distribution
 cf_tag_project: CHES CF test
 cf_priority: 1
 
-#------------------------------------------------#
+#--------------------------------------------#
 # Variable declaration for Lambda_service role
-#------------------------------------------------#
+#--------------------------------------------#
 lambda_name: CHES_Lambda
 lambda_state: present
-lambda_publish: True
 lambda_description: Lambda function for CHES project
-lambda_project_folder: "Lambda_service"   #/path/to/deployment/package
 lambda_deployment_package: lambda_func.zip
 lambda_runtime: python2.7
 lambda_timeout: 5
@@ -83,3 +81,21 @@ lambda_handler: lambda.handler
 lambda_memory_size: 128
 lambda_account: 123456789012 #AWS_Account ID
 lambda_production_version: 1 #Lambda function version
+
+#------------------------------------------------#
+# Variable declaration for SNS_service role
+#------------------------------------------------#
+sns_name: CHES_SNS_service
+sns_state: present
+sns_display_name: CHES SNS alarm service
+sns_minDelayTarget: 2
+sns_maxDelayTarget: 4
+sns_numRetries: 5
+sns_numMaxDelayRetries: 5
+sns_backoffFunction: linear
+sns_disableSubscriptionOverrides: True
+sns_maxReceivesPerSecond: 10
+sns_email_endpoint: test@ches-test.com
+sns_email_protocol: email
+sns_sms_endpoint: +91-9999999999
+sns_sms_protocol: sms

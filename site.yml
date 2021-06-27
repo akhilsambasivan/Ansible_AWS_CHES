@@ -7,4 +7,5 @@
    #- EC2_instance
    #- S3_service
    #- CloudFront_service
-   - Lambda_service 
+   #- Lambda_service 
+   - SNS_service

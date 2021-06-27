@@ -2,13 +2,11 @@
 # Simple example to create a lambda function and publish a version
 - name: CHES Lambda function
   lambda:
-    state: "{{ state | default('present') }}"
+    state: '{{ lambda_state }}'
     name: '{{ lambda_name }}'
-    publish: '{{ lambda_publish }}'
     description: '{{ lambda_description }}'
-    code_s3_bucket: '{{ CHES_s3_bucket_name }}'
-    code_s3_key: 'lambda/{{ lambda_deployment_package }}'
-    local_path: '{{ lambda_project_folder }}/{{ lambda_deployment_package }}'
+    s3_bucket: '{{ CHES_s3_bucket_name }}'
+    s3_key: 'lambda/{{ lambda_deployment_package }}'
     runtime: '{{ lambda_runtime }}'
     timeout: '{{ lambda_timeout }}'
     handler: '{{ lambda_handler }}'

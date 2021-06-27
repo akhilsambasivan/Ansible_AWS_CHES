@@ -1,0 +1,22 @@
+---
+- name: Create alarm SNS topic
+  sns_topic:
+    name: '{{ sns_name }}'
+    state: '{{ sns_state }}'
+    display_name: '{{ sns_display_name }}'
+    delivery_policy:
+      http:
+        defaultHealthyRetryPolicy:
+            minDelayTarget: '{{ sns_minDelayTarget }}'
+            maxDelayTarget: '{{ sns_maxDelayTarget }}'
+            numRetries: '{{ sns_numRetries }}'
+            numMaxDelayRetries: '{{ sns_numMaxDelayRetries }}'
+            backoffFunction: '{{ sns_backoffFunction }}'
+        disableSubscriptionOverrides: '{{ sns_disableSubscriptionOverrides }}'
+        defaultThrottlePolicy:
+            maxReceivesPerSecond: '{{ sns_maxReceivesPerSecond }}'
+    subscriptions:
+      - endpoint: "{{ sns_email_endpoint }}"
+        protocol: "{{ sns_email_protocol }}"
+      - endpoint: "{{ sns_sms_endpoint }}"
+        protocol: "{{ sns_sms_protocol }}"
