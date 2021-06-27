@@ -82,9 +82,19 @@ lambda_memory_size: 128
 lambda_account: 123456789012 #AWS_Account ID
 lambda_production_version: 1 #Lambda function version
 
-#------------------------------------------------#
+#-----------------------------------------#
+# Variable declaration for SQS_service role
+#-----------------------------------------#
+sqs_name: CHES_SQS_service
+sqs_default_visibility_timeout: 120
+sqs_message_retention_period: 86400
+sqs_maximum_message_size: 1024
+sqs_delivery_delay: 30
+sqs_receive_message_wait_time: 20
+
+#-----------------------------------------#
 # Variable declaration for SNS_service role
-#------------------------------------------------#
+#-----------------------------------------#
 sns_name: CHES_SNS_service
 sns_state: present
 sns_display_name: CHES SNS alarm service

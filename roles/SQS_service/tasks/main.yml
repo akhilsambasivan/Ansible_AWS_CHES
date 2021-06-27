@@ -1,2 +1,3 @@
 ---
 # tasks file for SQS_service
+- include: create_SQS_service.yml

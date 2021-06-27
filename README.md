@@ -9,3 +9,6 @@ IaC with Ansible for setting up CHES in AWS:
 - SQS_service (Create and manage SQS service for CHES)
 
 Variables for each role is defined in group_vars as global variables.
+
+AWS Ansible Module URL: 
+https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#

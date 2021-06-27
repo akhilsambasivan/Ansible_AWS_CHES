@@ -1,0 +1,10 @@
+---
+- name: Create CHES SQS service
+  sqs_queue:
+    name: '{{ sqs_name }}'
+    region: '{{ instance_region }}'
+    default_visibility_timeout: '{{ sqs_default_visibility_timeout }}'
+    message_retention_period: '{{ sqs_message_retention_period }}'
+    maximum_message_size: '{{ sqs_maximum_message_size }}'
+    delivery_delay: '{{ sqs_delivery_delay }}'
+    receive_message_wait_time: '{{ sqs_receive_message_wait_time }}'

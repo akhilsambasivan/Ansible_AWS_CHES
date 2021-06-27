@@ -1,5 +1,5 @@
 ---
-- name: Create alarm SNS topic
+- name: Create CHES SNS topic
   sns_topic:
     name: '{{ sns_name }}'
     state: '{{ sns_state }}'
